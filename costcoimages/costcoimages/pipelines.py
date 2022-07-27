@@ -5,8 +5,10 @@ class CostcoimagesPipeline:
     def process_item(self, item, spider):
         item_sku = item["sku"]
         item_img_url = item["img_url"]
-        item_product_url = item["product_url"]
-        text = ";".join([item_sku, item_img_url, item_product_url])
+        item_name = item["name"]
+        item_features = item["features"]
+        item_description = item["description"]
+        text = ";".join([item_sku, item_img_url, item_name, item_features, item_description])
         text = "".join([text, "\n"])
 
         filename = "_".join(
