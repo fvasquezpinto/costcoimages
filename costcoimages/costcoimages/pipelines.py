@@ -14,6 +14,6 @@ class CostcoimagesPipeline:
         filename = "_".join(
         	["costcoimages/spiders/output/costco_jp_images", spider.file_timestamp]
         )
-        filename = ".".join([filename, "txt"])
+        filename = ".".join([filename, "csv"])
         with open(filename, 'a', encoding='utf8') as f:
             f.write(text)

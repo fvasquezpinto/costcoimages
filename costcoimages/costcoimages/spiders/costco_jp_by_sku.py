@@ -31,7 +31,7 @@ class CostcoSpider(scrapy.Spider):
     filename = "_".join(
         ["costcoimages/spiders/output/costco_jp_images", file_timestamp]
     )
-    filename = ".".join([filename, "txt"])
+    filename = ".".join([filename, "csv"])
     file = open(filename, "w", encoding='utf8')
     file.write("sku;img_url;name;features;description\n")
     file.close()
@@ -42,9 +42,6 @@ class CostcoSpider(scrapy.Spider):
 
     custom_settings = {
         "ITEM_PIPELINES": {"costcoimages.pipelines.CostcoimagesPipeline": 0},
-        "DOWNLOADER_MIDDLEWARES": {
-            "scrapy_fake_useragent.middleware.RandomUserAgentMiddleware": None,
-        },
         "DOWNLOAD_DELAY": 1,
         "AUTOTHROTTLE_ENABLED": True,
         "AUTOTHROTTLE_START_DELAY": 1,
