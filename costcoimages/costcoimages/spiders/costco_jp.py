@@ -11,7 +11,7 @@ from costcoimages.items import CostcoimagesItem as Item
 
 logger = logging.getLogger('CostcoImages')
 
-class CostcoSpider(scrapy.spiders.XMLFeedSpider):
+class CostcoSiteMapSpider(scrapy.spiders.XMLFeedSpider):
 
     name = "CostcoJP"
     base_url = "https://www.costco.co.jp"
